@@ -45,11 +45,21 @@ Explain the difference between Data Analytics, Data Science, and Artificial Inte
 **Activity:**
 
 1. **The Matrix:** Classify each of the following 5 scenarios as Data Analytics, Data Science, or AI — and explain your reasoning:
-   - A bank system that automatically freezes a card and alerts the customer the instant it detects an unusual transaction, with no analyst reviewing it first
+
+```
+   - A bank system that automatically freezes a card and alerts the customer 
+   the instant it detects an unusual transaction, with no analyst reviewing it first
+   AI. Does not require an analysts' decision to 
    - A manager building a monthly pivot table of sales figures
+   Data Analytics. Pivot table analyses the past
    - A self-driving car that brakes automatically when it detects an obstacle
+   AI. Car decides to brake without human intervention
    - A model that predicts which customers are likely to churn next quarter
+   Data Science. It is a predictive model, but someone still has to decide what to do with the customers.
    - A dashboard showing last year's revenue broken down by region
+   Data Analytics. It is analysing what happened last year
+```
+
 
 <details>
 <summary>Answer Key — The Matrix</summary>
@@ -73,6 +83,10 @@ Explain the difference between Data Analytics, Data Science, and Artificial Inte
 
 - Does AI replace Data Science — or depend on it?
 
+```
+AI can replace some parts of data science (e.g. writing code, explaining error statements, developing new models). However, AI was likely developed using predictive models developed by data scientists, and data science as a field is still needed to maintain, support, develop and improve AI models.
+```
+
 <details>
 <summary>Suggested answer</summary>
 
@@ -81,6 +95,12 @@ AI **depends** on Data Science — it doesn't replace it. You need clean, well-u
 </details>
 
 - How does Netflix use Analytics, Data Science, and AI differently in its product?
+
+```
+Netflix uses data analytics to tell users how many hours they have spent watching Netflix, across what shows and genres etc.
+Data science is used to forecast / predict what shows users are likely to watch based on their watch history.
+AI would be used to push the predicted / forecasted shows to your Netflix feed and to populate the Recommended shows.
+```
 
 <details>
 <summary>Suggested answer</summary>
@@ -119,10 +139,17 @@ A quick heads-up on one term: **JSON**. It's simply a way of writing down data w
 
 | Pipeline Stage | What happens here? (Specific to a Smart Watch) |
 |:---|:---|
-| **1. Collection** | *Example: Heart rate sensor records BPM every 5 seconds...* |
-| **2. Cleaning** | *(What if the user takes the watch off? What if the battery dies mid-night?)* |
-| **3. Analysis** | *(How do we turn raw heartbeats into a "Sleep Score"? What is the math?)* |
-| **4. Visualisation** | *(What does the user actually see on their phone screen?)* |
+| **1. Collection** | The smart watch sensor reads user's heart rate, skin temperature, movement every 5 seconds *Example: Heart rate sensor records BPM every 5 seconds...* |
+| **2. Cleaning** | The smart watch detects when there is a gap in heart rate data (e.g. more than 5 minutes) and removes it *(What if the user takes the watch off? What if the battery dies mid-night?)* |
+| **3. Analysis** | The smart watch combines heart rate variability, skin temperature and movement into a sleep score, e.g. if heart rate, skin temperature and amount of movement are high, low sleep score *(How do we turn raw heartbeats into a "Sleep Score"? What is the math?)* |
+| **4. Visualisation** | The smart watch app shows the user their total sleep duration, amount of sleep in each stage (light, REM, deep), and a line graph of how long the user has slept in each stage. *(What does the user actually see on their phone screen?)* |
+
+```
+| **1. Collection** | The smart watch sensor reads user's heart rate, skin temperature, movement every 5 seconds |
+| **2. Cleaning** | The smart watch detects when there is a gap in heart rate data (e.g. more than 5 minutes) and removes excessively high or low heart rate |
+| **3. Analysis** | The smart watch weights heart rate variability, skin temperature and movement, and combines it into a sleep score, e.g. if heart rate, skin temperature and amount of movement are high, low sleep score |
+| **4. Visualisation** | The smart watch app shows the user total sleep duration, and amount of sleep in each stage (light, REM, deep) via a line graph|
+```
 
 <details>
 <summary>Sample answers for Stages 2–4</summary>
@@ -139,6 +166,8 @@ A quick heads-up on one term: **JSON**. It's simply a way of writing down data w
 
 If the "Cleaning" stage fails (e.g., we count the time the watch was on the nightstand as "Deep Sleep"), how does that ruin the "Visualisation"?
 
+The app would show the entire night as being in deep sleep, when this is not factually true.
+
 <details>
 <summary>Suggested answer</summary>
 
@@ -150,13 +179,15 @@ The app would show a falsely high Sleep Score and report more "Deep Sleep" than 
 
 **Task 1:** Categorise each of the following hospital data items as Structured, Unstructured, or Semi-Structured:
 
-1. Patient Name ("John Doe")
-2. X-Ray Image (chest_scan_001.jpg)
-3. Doctor's handwritten notes on a clipboard
-4. Patient Age (34)
-5. Blood Type (O+)
-6. Audio recording of a patient consultation
-7. JSON log from a heart monitor `{"bpm": 80, "time": "12:00"}` *(Tricky!)*
+```
+1. Patient Name ("John Doe") - structured
+2. X-Ray Image (chest_scan_001.jpg) - unstructured
+3. Doctor's handwritten notes on a clipboard - unstructured
+4. Patient Age (34) - structured
+5. Blood Type (O+) - structured
+6. Audio recording of a patient consultation - unstructured
+7. JSON log from a heart monitor `{"bpm": 80, "time": "12:00"}` *(Tricky!)* - semi-structured
+```
 
 <details>
 <summary>Answer Key — Data Binning</summary>
@@ -176,10 +207,13 @@ The app would show a falsely high Sleep Score and report more "Deep Sleep" than 
 </details>
 
 **Question:** How can you convert Unstructured text (like a doctor's note) into Structured data? Give an example.
+Using a template / table e.g. patient name, patient age, blood type, illness, diagnosis, medicine. Each field / column should be as structured as possible, e.g. converting diagnoses into categories.
 
 ### 💬 Q&A & Reflection (10 min)
 
 - Is JSON structured or unstructured? Where does it sit on the spectrum?
+
+JSON is semi-structured. It is structured because it has labels, but unstructured because each of the labels can point to different values/
 
 <details>
 <summary>Suggested answer</summary>
@@ -189,6 +223,7 @@ JSON is **semi-structured**. It has named keys and a predictable format within a
 </details>
 
 - Why do Data Scientists reportedly spend ~80% of their time in the Cleaning stage?
+Because in reality, a lot of data we receive is from non-data scientists, and it comes as unstructured data, or messy / unclean data.
 
 <details>
 <summary>Suggested answer</summary>
@@ -222,11 +257,19 @@ You build an AI to screen resumes for a tech company. You train it on the compan
 
 **Discussion:** *(If studying alone, write your answers before opening the suggested responses below.)*
 
+```
 1. Why did the AI do this? Was the AI sexist, or was the *data* sexist?
+Because likely the employees promoted to managerial roles were mostly men, if we assume the company follows traditional patriarchal structure. It is selection and historical bias. AI was not sexist, it was the data.
+
 2. Was this a "Data Collection" error or an "Analysis" error?
+Data Collection error. This is an example of Garbage In Garbage Out
+
 3. How would you fix this? *(Hint: Can you simply "delete" the gender column? Why might that not be enough?)*
+You would need to calibrate the AI to screen for different positions, e.g. entry-level, senior-level, management-level, and feed it resumes from existing employees at each tier. You would also need to define what good and bad resumes are. For hiring for entry-level positions, give it resumes of employees who were brought in as entry-level staff and were promoted at least once as examples of "successful" resumes / candidates, and employees who joined and left soon after (e.g. within 1 year) as examples of "bad" resumes / candidates to look out for. Same for hiring for senior / managerial roles. 
 
 **Output:** Write a one-sentence "Warning Label" that should be placed on this dataset before any Data Scientist uses it.
+Warning: this dataset represents anonmymised resumes of employees, with successful resumes based on managers' hiring decisions, which often contain subjective elements beyond resume qualifications. Please validate findings of AI with actual scrutiny / analysis of applicants' resumes before hiring.
+```
 
 <details>
 <summary>Sample Warning Label</summary>
@@ -241,6 +284,10 @@ A good warning label names: (1) the time period, (2) the source context, (3) the
 
 - Can we ever have 100% unbiased data? If not, what can we do?
 
+```
+No, because each person has their own lived experiences, subjectivities and biases. We can try to reduce bias by incorporating some random sampling.
+```
+
 <details>
 <summary>Suggested answer</summary>
 
@@ -249,6 +296,9 @@ No — all data is collected by humans or human-built systems, and all collectio
 </details>
 
 - What is the cost — financial and reputational — when an AI system fails in a public-facing application?
+```
+Financial cost - if AI is used to make financial decisions alone, e.g. buy or sell order on stocks and it fails, it would result in financial losses. Not to mention the existing cost of the AI license / subscription. Reputational loss would be to the company, which will be seen as more disingenuous and relying on AI rather than human judgement. People would trust the company less.
+```
 
 <details>
 <summary>Suggested answer</summary>

@@ -15,11 +15,21 @@ Break into small groups and answer the following. Use your knowledge of Structur
 * **Explicit Data (Things you click):** (e.g., Thumbs up/down...)  
 * **Implicit Data (Things you do):** (e.g., Did you pause at a scary scene? Did you binge-watch 5 episodes?)
 
+```
+Explicit data: Netflix username, clicks on shows, shows you like or dislike
+Implicit data: How many episodes you watch in a row, how long you paused a show for, whether you watched on 1.5x speed or 1.0x speed.
+
+```
+
 ### **Part 2: Structured vs. Unstructured**
 
 * **Structured Data:** User ID, Movie Genre, Release Year.  
 * **Unstructured Data:** The movie thumbnails (images), the movie plot summary (text), the video files themselves.  
   * *Question: How might Netflix use the **Unstructured** data (thumbnails) to trick you into watching a movie?*
+
+```
+Using "clickbait" thumbnails that are tailored to user's watch profile, teasers that only show the most exciting parts of the show, only having select key words / parts of the plot summary being shown to users
+```
 
 ### **Part 3: The Algorithm (Analysis)**
 
@@ -27,9 +37,17 @@ Break into small groups and answer the following. Use your knowledge of Structur
 * And User B watches "Breaking Bad".  
 * *What will the algorithm recommend to User B? Why?*
 
+```
+Better Call Saul. Assuming there's only 2 users, A and B, the Netflix algorithm knows from User A that users who watch Breaking Bad will watch Better Call Saul next, and hence will recommend User B Better Call Saul.
+```
+
 ### **Part 4: Ethics (The "Bubble")**
 
 * *Is it ethical for an algorithm to only show you things it knows you will like? Does this create a 'content bubble' that limits your exposure to new ideas?*
+
+```
+From Netflix's point of view, the algorithm is "ethical" as its intention is to maximise user enjoyment and to shield users from offensive / disturbing content. However from an outcome-based perspective, it could be considered unethical as users will have limited exposure to other perspectives / shows
+```
 
 ## **💡Please Share Your Answers & Thoughts in Discord💡**
 
